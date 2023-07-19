@@ -1,4 +1,4 @@
-.input{
+.input {
     background-color: aliceblue;
     border: 1px solid;
     width: 500px;
@@ -7,13 +7,15 @@
     padding: 25px;
 
 }
-.inputbox{
-display:flex ;
-align-items: center;
-justify-content: center;
-padding: 35px;
+
+.inputbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
 }
-.inputbutton{
+
+.inputbutton {
     background-color: rgb(53, 179, 228);
     color: white;
     border: none;
@@ -21,21 +23,24 @@ padding: 35px;
     height: 40px;
     border-radius: 10px;
 }
-.sortingbox{
+
+.sortingbox {
     width: 100%;
     height: 50px;
     display: flex;
     justify-content: center;
     margin-left: -50px;
 }
-.sorting{
+
+.sorting {
     border: 2px solid black;
     width: 252px;
     height: 35px;
     border-radius: 15px;
 
 }
-.comment{
+
+.comment {
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -44,18 +49,21 @@ padding: 35px;
 
 
 }
-.commentbox{
-position: relative;
-padding: 5px;
-margin-left: 25px;
+
+.commentbox {
+    position: relative;
+    padding: 5px;
+    margin-left: 25px;
 }
-.buttonbox{
+
+.buttonbox {
     display: flex;
     justify-content: center;
     width: 100%;
     gap: 10px;
 }
-.buttons{
+
+.buttons {
     background-color: rgba(15, 234, 70, 0.538);
     color: white;
     border: none;

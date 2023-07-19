@@ -18,7 +18,7 @@ const CommentSection = () => {
             replies: []
         }
 
-console.log(com);
+        console.log(com);
 
         setComments((prev) => [...prev, com]);
         setNewComment("")
@@ -102,13 +102,13 @@ console.log(com);
             sortedComment.sort((a, b) => a.id - b.id);
         }
         else if (option === "newest") {
-            sortedComment.sort((a,b) => b.id - a.id);
+            sortedComment.sort((a, b) => b.id - a.id);
         }
         else if (option === "leastscore") {
-            sortedComment.sort((a,b) => a.score - b.score);
+            sortedComment.sort((a, b) => a.score - b.score);
         }
         else if (option === "mostscore") {
-            sortedComment.sort((a,b) => b.score - a.score);
+            sortedComment.sort((a, b) => b.score - a.score);
         }
 
         setComments(sortedComment)
@@ -119,12 +119,11 @@ console.log(com);
     return (
         <>
             <div className={style.inputbox}>
-                <textarea className={style.input} placeholder='Enter your comment' value={newComment} onChange={(e) =>{ setNewComment(e.target.value);}} />
+                <textarea className={style.input} placeholder='Enter your comment' value={newComment} onChange={(e) => { setNewComment(e.target.value); }} />
                 <button className={style.inputbutton} onClick={AddComment}>Comment</button>
             </div>
             <div className={style.sortingbox}>
-                <select  value={sorts} className={style.sorting} onChange={(e) => SortComment(e.target.value)}>
-                    <option value="">sort here</option>
+                <select value={sorts} className={style.sorting} onChange={(e) => SortComment(e.target.value)}>
                     <option value="oldest">Oldest </option>
                     <option value="newest">Newest</option>
                     <option value="mostscore">Most Score</option>
