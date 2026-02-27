@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-shell {
   min-height: 100vh;
+  background: linear-gradient(160deg, #f4f7ff 0%, #eef5ff 30%, #f7f8ff 100%);
+  color: #1b2440;
+  padding: 2rem 1rem 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin-bottom: 0.25rem;
+}
+
+.hero p {
+  margin-top: 0;
+  color: #49516f;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+  box-shadow: 0 12px 30px rgba(27, 36, 64, 0.08);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+label {
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #c9d1e7;
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+}
+
+.notes-field {
+  grid-column: 1 / -1;
+}
+
+.controls {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button,
+.actions a {
+  border: none;
+  background: #2344ff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.55rem 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.stop-btn,
+.delete-btn {
+  background: #cb2f55;
+}
+
+.status {
+  color: #4a5372;
+}
+
+.error {
+  color: #cb2f55;
+  margin-bottom: 0;
+}
+
+.summary {
+  color: #49516f;
+}
+
+.empty {
+  margin: 0;
+  color: #657094;
+}
+
+.recording-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.recording-list li {
+  border: 1px solid #e2e7f7;
+  border-radius: 12px;
+  padding: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.recording-list h3 {
+  margin: 0;
+}
+
+.recording-list p {
+  margin: 0.35rem 0 0;
+  color: #4b567d;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.note {
+  font-style: italic;
 }
