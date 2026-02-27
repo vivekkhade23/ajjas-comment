@@ -1,0 +1,23 @@
+{
+  "name": "hims-backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Microservices backend for HIMS",
+  "scripts": {
+    "start:masters": "node services/masters/server.js",
+    "start:opd": "node services/opd/server.js",
+    "start:ipd": "node services/ipd/server.js",
+    "start:billing": "node services/billing/server.js",
+    "start:nursing": "node services/nursing-station/server.js",
+    "start:lab": "node services/lab/server.js",
+    "start:pharmacy": "node services/pharmacy/server.js",
+    "start:radiology": "node services/radiology/server.js",
+    "start:gateway": "node gateway/server.js",
+    "start:all": "node scripts/start-all.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "http-proxy-middleware": "^3.0.0"
+  }
+}
