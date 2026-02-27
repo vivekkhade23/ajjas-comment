@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# HIMS Application (React + Node.js Microservices)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project contains a **Healthcare Information Management System (HIMS)** with:
 
-## Available Scripts
+- A React.js frontend dashboard.
+- A Node.js backend split into microservices.
+- An API Gateway that routes module APIs to their own service.
 
-In the project directory, you can run:
+## Modules included
 
-### `npm start`
+- Masters
+- OPD
+- IPD
+- Billing
+- Nursing Station
+- Lab
+- Pharmacy
+- Radiology
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Architecture
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `backend/gateway`: API Gateway on `:4000`
+- `backend/services/masters`: Masters service on `:4001`
+- `backend/services/opd`: OPD service on `:4002`
+- `backend/services/ipd`: IPD service on `:4003`
+- `backend/services/billing`: Billing service on `:4004`
+- `backend/services/nursing-station`: Nursing Station service on `:4005`
+- `backend/services/lab`: Lab service on `:4006`
+- `backend/services/pharmacy`: Pharmacy service on `:4007`
+- `backend/services/radiology`: Radiology service on `:4008`
 
-### `npm test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1) Frontend environment
 
-### `npm run build`
+```bash
+cp .env.example .env
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2) Backend environment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd backend
+cp .env.example .env
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running the system
 
-### `npm run eject`
+### Start backend microservices + gateway
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+cd backend
+npm run start:all
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Start React frontend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Frontend runs on `http://localhost:3000` and consumes API from `REACT_APP_API_BASE_URL` (default `http://localhost:4000`).
 
-## Learn More
+## Example APIs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `GET /api/masters/departments`
+- `GET /api/opd/appointments`
+- `GET /api/ipd/admissions`
+- `GET /api/billing/invoices`
+- `GET /api/nursing-station/tasks`
+- `GET /api/lab/orders`
+- `GET /api/pharmacy/dispense`
+- `GET /api/radiology/studies`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Scripts
 
-### Code Splitting
+Frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- `npm start`
+- `npm test`
+- `npm run build`
 
-### Analyzing the Bundle Size
+Backend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `npm run start:gateway`
+- `npm run start:masters`
+- `npm run start:opd`
+- `npm run start:ipd`
+- `npm run start:billing`
+- `npm run start:nursing`
+- `npm run start:lab`
+- `npm run start:pharmacy`
+- `npm run start:radiology`
+- `npm run start:all`
