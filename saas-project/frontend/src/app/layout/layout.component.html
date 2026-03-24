@@ -1,0 +1,14 @@
+<div *ngIf="!isLoggedIn"><ng-content /></div>
+<div class="shell" *ngIf="isLoggedIn">
+  <aside class="sidebar card">
+    <h2>ClinicOS</h2>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
+    <a routerLink="/appointments" routerLinkActive="active">Appointments</a>
+    <a routerLink="/staff" routerLinkActive="active">Staff</a>
+    <a routerLink="/billing" routerLinkActive="active">Billing</a>
+  </aside>
+  <main>
+    <header class="topbar card"><app-tenant-switcher /></header>
+    <section class="container"><ng-content /></section>
+  </main>
+</div>

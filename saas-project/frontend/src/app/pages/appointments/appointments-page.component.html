@@ -1,0 +1,18 @@
+<div class="container grid">
+  <div class="card grid" style="grid-template-columns:repeat(4,1fr);">
+    <input [(ngModel)]="model.patientName" placeholder="Patient name" />
+    <input [(ngModel)]="model.phone" placeholder="Phone" />
+    <input [(ngModel)]="model.date" type="date" />
+    <input [(ngModel)]="model.amount" type="number" placeholder="Amount" />
+    <button class="btn btn-primary" style="grid-column:span 4" (click)="save()">Add Appointment</button>
+  </div>
+
+  <div class="card">
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><th>Patient</th><th>Phone</th><th>Date</th><th>Amount</th></tr>
+      <tr *ngFor="let row of rows">
+        <td>{{row.patientName}}</td><td>{{row.phone}}</td><td>{{row.date | date}}</td><td>${{row.amount}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

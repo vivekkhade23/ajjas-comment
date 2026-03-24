@@ -1,0 +1,12 @@
+<div class="container grid">
+  <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+    <div class="card"><small>Total Appointments</small><h2>{{kpis.totalAppointments}}</h2></div>
+    <div class="card"><small>Revenue</small><h2>${{kpis.revenue}}</h2></div>
+  </div>
+  <div class="card"><h3>Revenue Trend</h3><canvas #chartCanvas></canvas></div>
+  <div class="card" *ngIf="insights">
+    <h3>AI Insights</h3>
+    <p><strong>Lowest Day:</strong> {{insights.lowPerformanceDay}}</p>
+    <p><strong>Suggestion:</strong> {{insights.suggestion}}</p>
+  </div>
+</div>
