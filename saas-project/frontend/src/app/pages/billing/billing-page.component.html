@@ -1,0 +1,6 @@
+<div class="container grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+  <div class="card"><h3>Starter</h3><p>For small clinics.</p><button class="btn btn-primary" (click)="subscribe('starter')">Subscribe</button></div>
+  <div class="card"><h3>Growth</h3><p>For scaling teams.</p><button class="btn btn-primary" (click)="subscribe('growth')">Subscribe</button></div>
+  <div class="card"><h3>Enterprise</h3><p>For multi-branch operations.</p><button class="btn btn-primary" (click)="subscribe('enterprise')">Subscribe</button></div>
+  <div class="card" *ngIf="message" style="grid-column:1/-1">{{message}}</div>
+</div>
