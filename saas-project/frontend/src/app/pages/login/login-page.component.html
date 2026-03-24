@@ -1,0 +1,9 @@
+<div class="container" style="min-height:100vh;display:grid;place-items:center;">
+  <form class="card" style="width:360px;display:grid;gap:.8rem;" (ngSubmit)="onSubmit()">
+    <h2>Sign in</h2>
+    <input [(ngModel)]="email" name="email" type="email" placeholder="Email" required />
+    <input [(ngModel)]="password" name="password" type="password" placeholder="Password" required />
+    <button class="btn btn-primary" [disabled]="loading">{{loading ? 'Signing in...' : 'Login'}}</button>
+    <small style="color:#dc2626" *ngIf="error">{{error}}</small>
+  </form>
+</div>

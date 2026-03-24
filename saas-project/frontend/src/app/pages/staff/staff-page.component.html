@@ -1,0 +1,10 @@
+<div class="container grid">
+  <div class="card grid" style="grid-template-columns:repeat(4,1fr);">
+    <input [(ngModel)]="model.name" placeholder="Name" />
+    <input [(ngModel)]="model.email" placeholder="Email" />
+    <input [(ngModel)]="model.password" type="password" placeholder="Temporary password" />
+    <select [(ngModel)]="model.role"><option value="staff">Staff</option><option value="admin">Admin</option></select>
+    <button class="btn btn-primary" style="grid-column:span 4" (click)="add()">Add Staff</button>
+  </div>
+  <div class="card"><ul><li *ngFor="let person of staff">{{person.name}} · {{person.email}} · {{person.role}}</li></ul></div>
+</div>
